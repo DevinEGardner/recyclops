@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import QuestionScreen from './QuestionScreen'
 import HomeScreen from './Homescreen'
+import {items} from '../data/sampledata'
 
 const styles = {
     root:{
@@ -39,18 +40,24 @@ const styles = {
     }
 }
 
+// let test = {
+//     Title:"Let's Get Started!",
+//     Question: "What are you trying to recycle?",
+//     Options: [
+//         {text:'Bottles'},
+//         {text:'Boxes'},
+//         {text:'Paper'},
+//         {text:'Electronics'},
+//         {text:'Other'},
+//         {text:'Tires'},
+//         {text:'Stuff'}
+//     ]
+// }
+
 let test = {
-    Title:"Let's Get Started!",
+    ...items,
+    Title:"Let's get started!",
     Question: "What are you trying to recycle?",
-    Options: [
-        {text:'Bottles'},
-        {text:'Boxes'},
-        {text:'Paper'},
-        {text:'Electronics'},
-        {text:'Other'},
-        {text:'Tires'},
-        {text:'Stuff'}
-    ]
 }
 
 
