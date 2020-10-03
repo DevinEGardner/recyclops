@@ -2,6 +2,10 @@ import React, {useEffect} from 'react';
 import Button from './Button.js'
 
 export default function HomeScreen(props){
+    useEffect(()=>{
+        document.body.style.backgroundColor = props.styles?.root.background;
+    })
+    
     return (
         <div style={props.styles?.root}>
             <p style={{...props.styles?.root.h1, paddingTop:'200px'}} >Recyclops</p>
