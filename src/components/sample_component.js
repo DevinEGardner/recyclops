@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import QuestionScreen from './QuestionScreen'
 import HomeScreen from './Homescreen'
+import CamView from './CamScreen'
 import {items} from '../data/sampledata'
 
 const styles = {
@@ -64,17 +65,26 @@ let test = {
 export default function Screen(){
 
     let [ishome, goHome] = useState(true)
+    let [camview, triggerCamView] = useState(false)
     let [activePage, changePage] = useState(test)
+
+    
 
     return(
         <div>
         {   ishome 
             ? <div>
-                <HomeScreen goHome={goHome} styles={{...styles, root:{...styles.root, background:'#519369',color:'#DBF1CB',}, button:{...styles.button, background:'#5F3850', color:'#DBF1CB',}}}/>
+                <HomeScreen camView={triggerCamView} goHome={goHome} styles={{...styles, root:{...styles.root, background:'#519369',color:'#DBF1CB',}, button:{...styles.button, background:'#5F3850', color:'#DBF1CB',}}}/>
             </div> 
-            : <div>
-                <QuestionScreen {...activePage} changePage={changePage} goBack={()=>{goHome(true)}} styles={styles} />
+            : 
+            <div>
+            {camview ?
+                    <CamView camView={triggerCamView} goHome={goHome}></CamView>
+                :
+                    <QuestionScreen {...activePage} changePage={changePage} goBack={()=>{changePage(test);goHome(true)}} styles={styles} />
+                }
             </div>
+            
         }
         </div>
     )

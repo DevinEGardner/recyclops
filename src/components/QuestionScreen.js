@@ -38,7 +38,7 @@ export default function QuestionScreen(props){
 
         </div>
 
-        <Button onClick={()=>{props.goBack()}} style={ {... props.styles?.button, width:'164px', position:'absolute', left:'25px', bottom:'40px'}} ButtonText="Go Back"></Button>
+        <Button onClick={()=>{props.goBack()}} style={ {...props.styles?.button, width:'164px', position:'absolute', left:'25px', bottom:'40px'}} ButtonText="Go Back"></Button>
     </div>
     )
 }
